@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Bill</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <h2>Your Bill</h2>
+  {% for item, (qty, cost) in quantities.items() %}
+    <p>{{ item }} x {{ qty }} = ₹{{ cost }}</p>
+  {% endfor %}
+  <hr>
+  <h3>Total: ₹{{ total }}</h3>
+  <a href="/">Back to Menu</a>
+</body>
+</html>
